@@ -44,3 +44,28 @@ figcaption {
     color: #555;
 }
 
+/* Centraliza e define largura da figure da matriz */
+figure img[alt*="matriz"] {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+figure:has(img[alt*="matriz"]) {
+    width: 550px;
+    margin: 24px auto;
+    text-align: center;
+}
+
+/* Alinha à direita e define largura da figure da família */
+figure img[alt*="Família"] {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+figure:has(img[alt*="Família"]) {
+    width: 275px;
+    float: right;
+    margin: 0 0 16px 24px;
+    text-align: center;
+}
+
