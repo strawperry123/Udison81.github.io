@@ -69,3 +69,33 @@ figure:has(img[alt*="Família"]) {
     text-align: center;
 }
 
+/* Estilo compartilhado para h1 e h2.titulo-principal */
+.titulo-principal,
+h1 {
+    font-size: 2.5em;
+    color: #222;
+    text-shadow: 2px 2px 4px #aaa;
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    background-color: #E1EDF2; /* cor de fundo cinza-azulado */
+    border-bottom: none;       /* remove borda inferior */
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* Estilo apenas para os subtítulos História e Diferenciais */
+#historia,
+#diferenciais {
+    font-size: 2em;
+    color: #444;
+    border-bottom: 2px solid #ccc;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-shadow: none;
+    text-decoration: underline;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+}
+
