@@ -40,6 +40,46 @@ a {
   text-decoration: none;
 }
 
+.official-logo {
+  display: inline-grid;
+  gap: 3px;
+  min-width: max-content;
+}
+
+.official-logo strong {
+  color: #ffffff;
+  font-size: 1.02rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.official-logo em {
+  color: #73f3e3;
+  font-style: normal;
+  font-size: 0.82rem;
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.official-logo small {
+  color: rgba(255,255,255,0.66);
+  font-size: 0.68rem;
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.old-logo-note {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  color: #102b28;
+  background: rgba(115, 243, 227, 0.9);
+  border-radius: 8px;
+  font-weight: 900;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -671,7 +711,15 @@ textarea {
 }
 
 @media (max-width: 520px) {
-  .brand small {
+  .official-logo strong {
+    font-size: 0.86rem;
+  }
+
+  .official-logo em {
+    font-size: 0.72rem;
+  }
+
+  .official-logo small {
     display: none;
   }
 
@@ -700,9 +748,10 @@ textarea {
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Udison home">
       <span class="brand-mark">U</span>
-      <span>
-        <strong>Udison</strong>
-        <small>發迪企業有限公司</small>
+      <span class="official-logo">
+        <strong>Udison Trading Co.,Ltd.</strong>
+        <em>發迪企業有限公司</em>
+        <small>1pcs demand, 100% service</small>
       </span>
     </a>
     <nav class="nav" aria-label="Main navigation">
@@ -719,6 +768,7 @@ textarea {
       <div class="hero-art" aria-hidden="true"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
+        <div class="old-logo-note">Udison Trading Co.,Ltd. · 發迪企業有限公司</div>
         <p class="eyebrow">Independent electronic components stockist since 1989 / 1989 年成立之電子零件庫存供應商</p>
         <h1 id="hero-title">Udison Trading Co., Ltd.</h1>
         <p class="hero-company">發迪企業有限公司</p>
