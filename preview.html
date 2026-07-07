@@ -537,6 +537,125 @@ textarea {
   color: rgba(255, 255, 255, 0.72);
 }
 
+
+.legacy-gallery {
+  width: min(1180px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 96px) 0 0;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.visual-card {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111827;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: var(--shadow);
+}
+
+.visual-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.86;
+}
+
+.visual-card figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px;
+  color: var(--white);
+  background: linear-gradient(0deg, rgba(17,24,39,0.86), transparent);
+  font-weight: 800;
+}
+
+.brand-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.brand-photo {
+  display: grid;
+  grid-template-rows: 126px auto;
+  min-height: 206px;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 14px 40px rgba(17, 24, 39, 0.07);
+}
+
+.brand-photo img {
+  width: 100%;
+  height: 126px;
+  object-fit: contain;
+  padding: 18px;
+  background: #f9fbfd;
+}
+
+.brand-photo figcaption {
+  padding: 14px 16px 18px;
+}
+
+.brand-photo strong,
+.brand-photo small {
+  display: block;
+}
+
+.brand-photo strong {
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.brand-photo small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.parts-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.part-tile {
+  padding: 18px;
+  min-height: 128px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 80% 18%, rgba(115,243,227,0.28), transparent 28%),
+    linear-gradient(135deg, #17202b, #0f1720);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.part-tile b {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.part-tile span {
+  color: rgba(255,255,255,0.74);
+  font-size: 0.92rem;
+}
+
 @media (max-width: 860px) {
   .site-header {
     position: absolute;
@@ -575,6 +694,17 @@ textarea {
   .intro-band {
     display: block;
   }
+  .visual-grid,
+  .brand-photo-grid,
+  .parts-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-card,
+  .visual-card img {
+    min-height: 220px;
+  }
+
 
   .intro-band p + p {
     margin-top: 4px;
@@ -654,6 +784,36 @@ textarea {
       <p>1pcs 的需求，100% 的服務</p>
     </section>
 
+
+    <section class="legacy-gallery" aria-labelledby="legacy-title">
+      <div class="section-kicker">Original Visual Material / 舊網站素材</div>
+      <div class="section-heading">
+        <div>
+          <h2 id="legacy-title">
+            <span>More component imagery from the existing Udison site.</span>
+            <span lang="zh-Hant">加入舊網站原有零件視覺，讓客戶更快理解產品類型。</span>
+          </h2>
+        </div>
+        <p>These visuals echo the older Udison material while keeping the new layout modern and easier to scan.<br><span lang="zh-Hant">保留舊站素材記憶點，同時用新版版面呈現。</span></p>
+      </div>
+      <div class="visual-grid">
+        <figure class="visual-card">
+          <img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/41/14455874841.jpg" alt="Electronic components from the original Udison website" loading="lazy">
+          <figcaption>Electronic component inventory / 電子零件庫存</figcaption>
+        </figure>
+        <figure class="visual-card">
+          <img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/01/14455874601.jpg" alt="Semiconductor and electronic parts from the original Udison website" loading="lazy">
+          <figcaption>Semiconductor sourcing / 半導體料件供應</figcaption>
+        </figure>
+      </div>
+      <div class="parts-strip" aria-label="Electronic part categories">
+        <div class="part-tile"><b>ICs</b><span>Integrated circuits / 積體電路</span></div>
+        <div class="part-tile"><b>Diodes</b><span>Switching and protection / 二極體</span></div>
+        <div class="part-tile"><b>Capacitors</b><span>Passive components / 被動元件</span></div>
+        <div class="part-tile"><b>Transistors</b><span>Discrete semiconductor / 電晶體</span></div>
+      </div>
+    </section>
+
     <section class="section company" id="company">
       <div class="section-kicker">Company Profile / 公司簡介</div>
       <div class="split">
@@ -714,6 +874,19 @@ textarea {
         </div>
         <p>Original site materials reference European, American, Japanese, and Taiwanese active and passive component brands.<br><span lang="zh-Hant">服務歐、美、日、台等各大品牌電子元件需求。</span></p>
       </div>
+
+      <div class="brand-photo-grid" aria-label="Brand images from original Udison product list">
+        <figure class="brand-photo"><img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/119/14974201191_thumbs3.GIF" alt="Micron brand image" loading="lazy"><figcaption><strong>Micron</strong><small>Memory and semiconductor / 記憶體與半導體</small></figcaption></figure>
+        <figure class="brand-photo"><img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/800/14974288001_thumbs3.GIF" alt="Atmel brand image" loading="lazy"><figcaption><strong>Atmel</strong><small>Microcontrollers / 微控制器</small></figcaption></figure>
+        <figure class="brand-photo"><img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/216/14974282161_thumbs3.GIF" alt="Texas Instruments brand image" loading="lazy"><figcaption><strong>Texas Instruments</strong><small>Analog and embedded / 類比與嵌入式</small></figcaption></figure>
+        <figure class="brand-photo"><img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/854/14974278541_thumbs3.GIF" alt="ON Semiconductor brand image" loading="lazy"><figcaption><strong>ON Semiconductor</strong><small>Power and discrete / 功率與分離式元件</small></figcaption></figure>
+        <figure class="brand-photo"><img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/335/14974273351_thumbs3.GIF" alt="Hynix Semiconductor brand image" loading="lazy"><figcaption><strong>Hynix Semiconductor</strong><small>Memory components / 記憶體元件</small></figcaption></figure>
+        <figure class="brand-photo"><img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/768/14455947681_thumbs3.gif" alt="Freescale brand image" loading="lazy"><figcaption><strong>Freescale</strong><small>Embedded processors / 嵌入式處理器</small></figcaption></figure>
+        <figure class="brand-photo"><img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/862/14455828621_thumbs3.gif" alt="Intel brand image" loading="lazy"><figcaption><strong>Intel</strong><small>Processors and chipsets / 處理器與晶片組</small></figcaption></figure>
+        <figure class="brand-photo"><img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/574/14455935741_thumbs3.jpg" alt="International Rectifier brand image" loading="lazy"><figcaption><strong>International Rectifier</strong><small>Power management / 電源管理</small></figcaption></figure>
+        <figure class="brand-photo"><img src="https://plus.webdo.com.tw/manager_admin/newwebdo_upfile/339/14455943391_thumbs3.GIF" alt="Microchip brand image" loading="lazy"><figcaption><strong>Microchip</strong><small>MCU and analog / MCU 與類比元件</small></figcaption></figure>
+      </div>
+
       <div class="brand-cloud" aria-label="Referenced product brands">
         <span>Micron</span>
         <span>Atmel</span>
